@@ -10,7 +10,11 @@ Tested on Gentoo with icc-12.1.9.293 USE=mkl from 'sekyfsr' overlay
 layman -a sekyfsr
 layman -S && eix-update && eix-sync -q
 ACCEPT_KEYWORDS='**' USE=mkl emerge dev-lang/icc
-# XXX: more with echo here ?
+
+# or, using mygentoo:
+git clone git://github.com/npinto/mygentoo.git
+cd mygentoo
+sudo make install icc
 
 
 Instructions:
