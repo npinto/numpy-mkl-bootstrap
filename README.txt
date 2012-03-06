@@ -16,13 +16,19 @@ ACCEPT_KEYWORDS='**' USE=mkl emerge dev-lang/icc
 Instructions:
 -------------
 
+# create virtualenv
 mkvirtualenv --no-site-packages numpy-mkl
 pip install -I ipython nose
+
+# install numpy
 make install
+
+# test with appropriate path
+export LD_LIBRARY_PATH=/opt/intel/composerxe-2011.9.293/mkl/lib/intel64:${LD_LIBRARY_PATH}
 make test
 
 
-In ipython (it should be using all the cores, and be *really* fast):
+# In ipython (it should be using all the cores, and be *really* fast):
 
 import numpy as np
 a = np.empty((4096, 4096), dtype=np.float32)
