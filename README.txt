@@ -26,3 +26,11 @@ In ipython (it should be using all the cores, and be *really* fast):
 import numpy as np
 a = np.empty((4096, 4096), dtype=np.float32)
 timeit np.dot(a, a)
+
+
+Misc:
+-----
+
+Part of what makes this work comes from a patch, here is the pull request upstream:
+https://github.com/numpy/numpy/pull/229
+(see also http://projects.scipy.org/numpy/ticket/993)
